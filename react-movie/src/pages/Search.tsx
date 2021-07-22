@@ -1,7 +1,7 @@
 import React from "react";
 
-const Container: React.FC = () => {
-  return <div>Home Page</div>;
+const Search: React.FC = () => {
+  return <div>Search</div>;
 };
 
-export default Container;
+export default Search;
