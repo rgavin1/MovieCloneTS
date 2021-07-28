@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HomePage, SearchPage, TvPage, MoviePage } from "./pages";
 // Components
 import { NavBar } from "./components";
+import "./App.css";
 
 const App: React.FC = () => {
   return (

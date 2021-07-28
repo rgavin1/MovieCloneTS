@@ -32,7 +32,7 @@ const Home: React.FC = () => {
         });
 
       setLoading(false);
-    }, 5000);
+    }, 500);
   }, []);
 
   return (
