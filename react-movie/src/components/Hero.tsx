@@ -1,8 +1,13 @@
-import { Container } from "@material-ui/core";
+import { Button, Container, Icon } from "@material-ui/core";
 import React, { useContext } from "react";
 
 import { HeroContext } from "../useContext";
+import { Genre } from "./index";
 import "./styles/Hero.css";
+
+import StarIcon from "@material-ui/icons/Star";
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 
 const Hero: React.FC = () => {
   const feature = useContext(HeroContext);
@@ -11,33 +16,49 @@ const Hero: React.FC = () => {
     <div
       className="hero-container"
       style={{
+        background: "rgb(0 0 0 / 46%)",
         backgroundImage: `url(
           https://image.tmdb.org/t/p/original${feature?.backdrop_path}
         )`,
       }}
     >
       <Container>
-        <h2>Title {feature?.title}</h2>
-        <h2>Adult {feature?.adult}</h2>
-        <h2>Backdrop Path: ${feature?.backdrop_path}</h2>
-        <h2>Genre Ids {feature?.genre_ids}</h2>
-        <h2>ID {feature?.id}</h2>
-        <h2>Media Type {feature?.media_type}</h2>
-        <h2>Original Language {feature?.original_language}</h2>
-        <h2>Original Title {feature?.original_title}</h2>
-        <h2>Overview {feature?.overview}</h2>
-        <h2>Popularity {feature?.popularity}</h2>
-        <h2>Release Date {feature?.release_date}</h2>
-        <h2>Video {feature?.video}</h2>
-        <h2>Vote Average {feature?.vote_average}</h2>
-        <h2>Vote Count {feature?.vote_count}</h2>
+        <div className="hero-data">
+          <h1>{feature?.title}</h1>
+          <ul className="hero-meta">
+            <li>{`${feature?.release_date}`.slice(0, 4)}</li>
+            <li className="hero-meta-vote">
+              <StarIcon /> <span>{feature?.vote_average}</span>
+            </li>
+            <li className="hero-meta-vote">
+              <PeopleAltIcon /> {feature?.vote_count}
+            </li>
+          </ul>
+          <p>Overview {feature?.overview}</p>
+          <div className="hero-genre">
+            {feature?.genre_ids && <Genre ids={feature?.genre_ids} />}
+          </div>
+          <br />
+          <div className="hero-button-group">
+            <Button variant="contained">More Info</Button>
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<PlayArrowIcon />}
+            >
+              Watch Trailer
+            </Button>
+          </div>
+        </div>
       </Container>
 
-      <h2>Poster Path: </h2>
-      <img
-        src={`https://image.tmdb.org/t/p/original${feature?.poster_path}`}
-        alt=""
-      />
+      {/* <h2>Poster Path: </h2>
+      <Container>
+        <img
+          src={`https://image.tmdb.org/t/p/original${feature?.poster_path}`}
+          alt=""
+        />
+      </Container> */}
     </div>
   );
 };
