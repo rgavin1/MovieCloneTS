@@ -20,7 +20,7 @@ import { selectedFeature } from "../utils";
 
 const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [feature, setFeature] = useState<Feature>(null);
+  const [feature, setFeature] = useState<Feature[]>();
 
   useEffect(() => {
     setLoading(true);

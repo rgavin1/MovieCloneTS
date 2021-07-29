@@ -32,6 +32,8 @@ type Tv = Movie & {
   original_name: string;
 };
 
+export type Feature = Movie | Tv | null;
+
 export enum MediaTypes {
   MOVIE = "movie",
   TV = "tv",
@@ -43,7 +45,7 @@ export enum MediaTypes {
  * I dont this function returns the same fu*kin'
  * function twice 🤯
  */
-export const trendingMedia = async (mediaType: MediaTypes) => {
+export const resquestTrendingMedia = async (mediaType: MediaTypes) => {
   const response: any = await fetch(
     `https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=${APIKEY}`
   );
