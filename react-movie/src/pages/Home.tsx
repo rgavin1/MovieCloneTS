@@ -1,9 +1,9 @@
 /**
  * Things to Do
- * - [ ] Print the Selected Feature and Content
+ * - [x] Print the Selected Feature and Content
  * - [ ] Update the Favicon and Tab Name
  * - [ ] Create a function for loading a random feature
- * - [ ] Create a Hero Image
+ * - [x] Create a Hero Image
  * - [ ] Create a Provider for the Hero Image
  * - [ ] Adding Components
  */
@@ -17,28 +17,33 @@ import { HeroContext } from "../useContext";
 // API
 import { resquestTrendingMedia, MediaTypes, Feature } from "../api/API";
 import { selectedFeature } from "../utils";
+import { CircularProgress } from "@material-ui/core";
 
 const Home: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [feature, setFeature] = useState<Feature[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [feature, setFeature] = useState<Feature>(null);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     setTimeout(() => {
       resquestTrendingMedia(MediaTypes.ALL)
         .then((res) => res.json())
         .then((data) => {
           setFeature(selectedFeature(data.results));
+        })
+        .catch((err) => {
+          console.warn(err);
+          setIsLoading(false);
         });
 
-      setLoading(false);
+      setIsLoading(false);
     }, 500);
   }, []);
 
   return (
     <>
-      {loading ? (
-        <h1>Loading...</h1>
+      {isLoading ? (
+        <CircularProgress />
       ) : (
         <HeroContext.Provider value={feature}>
           <Hero />
