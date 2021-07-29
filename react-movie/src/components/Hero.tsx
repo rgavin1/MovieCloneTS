@@ -2,12 +2,14 @@ import { Button, Container, Icon } from "@material-ui/core";
 import React, { useContext } from "react";
 
 import { HeroContext } from "../useContext";
-import { Genre } from "./index";
+import { Genre, Modal } from "./index";
 import "./styles/Hero.css";
 
 import StarIcon from "@material-ui/icons/Star";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import AddIcon from '@material-ui/icons/Add';
+import InfoIcon from '@material-ui/icons/Info';
 
 const Hero: React.FC = () => {
   const feature = useContext(HeroContext);
@@ -40,14 +42,10 @@ const Hero: React.FC = () => {
           </div>
           <br />
           <div className="hero-button-group">
-            <Button variant="contained">More Info</Button>
-            <Button
-              variant="contained"
-              color="primary"
-              endIcon={<PlayArrowIcon />}
-            >
-              Watch Trailer
-            </Button>
+            <Button title="Add" variant="contained"> <AddIcon /></Button>
+            <Button title="Like" variant="contained"><FavoriteIcon /></Button>
+            <Button title="More Info" variant="contained"><InfoIcon /></Button>
+            <Modal />
           </div>
         </div>
       </Container>
