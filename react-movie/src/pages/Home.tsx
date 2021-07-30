@@ -11,7 +11,7 @@
 import React, { useState, useEffect } from "react";
 
 // Appication Components
-import { Hero } from "../components";
+import { Hero, Body } from "../components";
 import { HeroContext } from "../useContext";
 
 // API
@@ -43,11 +43,14 @@ const Home: React.FC = () => {
   return (
     <>
       {isLoading ? (
-        <CircularProgress />
+        <CircularProgress className="loader" />
       ) : (
+        <div className="homepage">
         <HeroContext.Provider value={feature}>
           <Hero />
         </HeroContext.Provider>
+        <Body />
+        </div>
       )}
     </>
   );
