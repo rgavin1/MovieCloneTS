@@ -1,10 +1,18 @@
 import React from "react";
 
+import { Slider } from "./index";
+
 const Body: React.FC = () => {
     return(
-        <h1 style={{ color: 'red' }}>
-            Body
-        </h1>
+        <>
+            <Slider />
+            <Slider />
+            <Slider />
+            <Slider />
+            <Slider />
+            <Slider />
+            <Slider />
+        </>
     )
 }
 

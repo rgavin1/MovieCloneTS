@@ -49,3 +49,9 @@
   display: flex;
   gap: 30px;
 }
+
+@media screen and (max-width: 992px) {
+  .hero-container {
+    background-position: top right !important;
+  }
+}

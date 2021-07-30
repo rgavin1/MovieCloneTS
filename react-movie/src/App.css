@@ -904,6 +904,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #fff;
   font-size: 16px;
+  background: #000;
 }
 p {
   line-height: 160%;
@@ -919,6 +920,14 @@ p {
   transform: translate(-50%, -50%);
 }
 
-.homepage {
+/* Use on all pages */
+.page {
   width: 100%;
+  background: #000;
+}
+
+@media screen and (max-width: 992px) {
+  .App {
+    display: inherit;
+  }
 }

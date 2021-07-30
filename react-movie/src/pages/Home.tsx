@@ -45,11 +45,11 @@ const Home: React.FC = () => {
       {isLoading ? (
         <CircularProgress className="loader" />
       ) : (
-        <div className="homepage">
-        <HeroContext.Provider value={feature}>
-          <Hero />
-        </HeroContext.Provider>
-        <Body />
+        <div className="page">
+          <HeroContext.Provider value={feature}>
+            <Hero />
+          </HeroContext.Provider>
+          <Body />
         </div>
       )}
     </>
