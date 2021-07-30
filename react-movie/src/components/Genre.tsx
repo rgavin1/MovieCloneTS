@@ -4,9 +4,9 @@ import { genres } from "../api/API";
 const Genre: React.FC<{ ids: number[] }> = ({ ids }) => {
   return (
     <ul>
-      {ids.map((termid) => {
+      {ids.map((termid, index) => {
         const term = genres.find((genre) => genre.id === termid);
-        return <li>{term?.name}</li>;
+        return <li key={index}>{term?.name}</li>;
       })}
     </ul>
   );

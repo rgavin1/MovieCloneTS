@@ -1,4 +1,4 @@
-import { Button, Container, Icon } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 import React, { useContext } from "react";
 
 import { HeroContext } from "../useContext";
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             <Button title="Add" variant="contained"> <AddIcon /></Button>
             <Button title="Like" variant="contained"><FavoriteIcon /></Button>
             <Button title="More Info" variant="contained"><InfoIcon /></Button>
-            <Modal />
+            { Boolean(feature?.id) && <Modal id={feature?.id} />}
           </div>
         </div>
       </Container>
