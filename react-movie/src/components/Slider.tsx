@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: '#000',
+      backgroundColor: 'transparent',
     },
     imageList: {
       flexWrap: 'nowrap',

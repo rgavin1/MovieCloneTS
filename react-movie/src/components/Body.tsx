@@ -4,7 +4,7 @@ import { Slider } from "./index";
 
 const Body: React.FC = () => {
     return(
-        <>
+        <div className="body-container" style={{ position: 'relative', top: '-88px' }}>
             <Slider />
             <Slider />
             <Slider />
@@ -12,7 +12,7 @@ const Body: React.FC = () => {
             <Slider />
             <Slider />
             <Slider />
-        </>
+        </div>
     )
 }
 
