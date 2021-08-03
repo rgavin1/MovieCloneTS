@@ -94,9 +94,18 @@ export const resquestTrendingMedia = async (mediaType: MediaTypes) => {
   return await response;
 };
 
+// Movies 🎥
 export const requestMovieTrailers = async (movie_id: string) => {
   const response: any = await fetch(
     `https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${APIKEY}&language=en-US`
+  );
+
+  return await response;
+};
+
+export const requestMovieNowPlaying = async () => {
+  const response: any = await fetch(
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKEY}&language=en-US&page=1`
   );
 
   return await response;
