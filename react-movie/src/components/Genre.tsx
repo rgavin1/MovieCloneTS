@@ -1,7 +1,7 @@
 import React from "react";
 import { genres } from "../api/API";
 
-const Genre: React.FC<{ ids: number[] }> = ({ ids }) => {
+const Genre: React.FC<{ ids: any[] }> = ({ ids }) => {
   return (
     <ul>
       {ids.map((termid, index) => {

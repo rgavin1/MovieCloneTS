@@ -7,9 +7,9 @@ import "./styles/Hero.css";
 
 import StarIcon from "@material-ui/icons/Star";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import AddIcon from '@material-ui/icons/Add';
-import InfoIcon from '@material-ui/icons/Info';
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import AddIcon from "@material-ui/icons/Add";
+import InfoIcon from "@material-ui/icons/Info";
 
 const Hero: React.FC = () => {
   const feature = useContext(HeroContext);
@@ -38,14 +38,21 @@ const Hero: React.FC = () => {
           </ul>
           <p>Overview {feature?.overview}</p>
           <div className="hero-genre">
-            {feature?.genre_ids && <Genre ids={feature?.genre_ids} />}
+            {/* {feature?.genre_ids && <Genre ids={feature?.genre_ids} />} */}
           </div>
           <br />
           <div className="hero-button-group">
-            <Button title="Add" variant="contained"> <AddIcon /></Button>
-            <Button title="Like" variant="contained"><FavoriteIcon /></Button>
-            <Button title="More Info" variant="contained"><InfoIcon /></Button>
-            { Boolean(feature?.id) && <Modal id={feature?.id} />}
+            <Button title="Add" variant="contained">
+              {" "}
+              <AddIcon />
+            </Button>
+            <Button title="Like" variant="contained">
+              <FavoriteIcon />
+            </Button>
+            <Button title="More Info" variant="contained">
+              <InfoIcon />
+            </Button>
+            {Boolean(feature?.id) && <Modal id={feature?.id} />}
           </div>
         </div>
       </Container>
