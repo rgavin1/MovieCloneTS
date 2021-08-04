@@ -3,3 +3,11 @@
   height: 487px !important;
   padding: 10px !important;
 }
+
+.slider-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}

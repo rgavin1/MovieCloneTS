@@ -110,11 +110,11 @@ export default function SingleLineImageList() {
       .catch((err) => {
         console.warn(err);
       });
-  });
+  }, []);
 
   return (
     <div className={classes.root}>
-      <h3 style={{ color: "red" }}>Genre/Whats trending</h3>
+      <h3 className="slider-title">Genre/Whats trending</h3>
       <ImageList className={classes.imageList} cols={2.5}>
         {list.map(
           (item: {

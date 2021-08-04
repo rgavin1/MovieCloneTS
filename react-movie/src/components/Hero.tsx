@@ -43,7 +43,6 @@ const Hero: React.FC = () => {
           <br />
           <div className="hero-button-group">
             <Button title="Add" variant="contained">
-              {" "}
               <AddIcon />
             </Button>
             <Button title="Like" variant="contained">
@@ -56,14 +55,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </Container>
-
-      {/* <h2>Poster Path: </h2>
-      <Container>
-        <img
-          src={`https://image.tmdb.org/t/p/original${feature?.poster_path}`}
-          alt=""
-        />
-      </Container> */}
     </div>
   );
 };

@@ -1,5 +1,3 @@
-const APIKEY = "16a2d758fecccf61be2a8107d67a5aba";
-
 export const genres: genres[] = [
   { id: 28, name: "Action" },
   { id: 12, name: "Adventure" },
@@ -76,6 +74,10 @@ type Tv = Movie & {
 };
 
 export type Feature = Movie | Tv | null;
+export type Slider = {
+  title?: string;
+  url?: string;
+};
 
 export enum MediaTypes {
   MOVIE = "movie",
