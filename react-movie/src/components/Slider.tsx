@@ -104,7 +104,6 @@ export default function SingleLineImageList() {
     requestMovieNowPlaying()
       .then((res) => res.json())
       .then((data) => {
-        console.log("Movie Request >> ", data.results);
         setList(data.results);
       })
       .catch((err) => {
@@ -114,7 +113,7 @@ export default function SingleLineImageList() {
 
   return (
     <div className={classes.root}>
-      <h3 className="slider-title">Genre/Whats trending</h3>
+      <h3 className="slider-title">Section Title</h3>
       <ImageList className={classes.imageList} cols={2.5}>
         {list.map(
           (item: {
