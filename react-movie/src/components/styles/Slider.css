@@ -9,7 +9,8 @@
   font-size: 2rem;
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 30px 15px 0px;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 992px) {

@@ -107,10 +107,11 @@ export const requestMovieTrailers = async (movie_id: string) => {
   return await response;
 };
 
-export const requestMovieNowPlaying = async () => {
-  const response: any = await fetch(
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKEY}&language=en-US&page=1`
-  );
+export const makeRequest = async (url: string) => {
+  let response: any = "";
+  if (Boolean(url)) {
+    response = await fetch(url);
+  }
 
   return await response;
 };

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
-import { requestMovieNowPlaying } from "../api/API";
+import { makeRequest } from "../api/API";
 
 import "./styles/Slider.css";
 
@@ -10,6 +10,7 @@ import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import { SliderContext } from "../useContext";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -97,50 +98,56 @@ const itemData = [
 
 export default function SingleLineImageList() {
   const classes = useStyles();
-
   const [list, setList] = useState<any>([]);
+  const sliderData = useContext(SliderContext);
 
   useEffect(() => {
-    requestMovieNowPlaying()
-      .then((res) => res.json())
-      .then((data) => {
-        setList(data.results);
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
+    if (Boolean(sliderData)) {
+      makeRequest(sliderData.url as string)
+        .then((res) => res.json())
+        .then((data) => {
+          setList(data.results);
+        })
+        .catch((err) => {
+          console.warn(err);
+        });
+    }
   }, []);
 
   return (
     <div className={classes.root}>
-      <h3 className="slider-title">Section Title</h3>
-      <ImageList className={classes.imageList} cols={2.5}>
-        {list.map(
-          (item: {
-            poster_path: any | null | undefined;
-            title: any | null | undefined;
-          }) => (
-            <ImageListItem key={item.poster_path}>
-              <img
-                src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-                alt={item.title}
-              />
-              <ImageListItemBar
-                title={item.title}
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-                actionIcon={
-                  <IconButton aria-label={`star ${item.title}`}>
-                    <StarBorderIcon className={classes.title} />
-                  </IconButton>
-                }
-              />
-            </ImageListItem>
-          )
-        )}
-      </ImageList>
+      {Boolean(list) && (
+        <>
+          <h3 className="slider-title">{sliderData.title}</h3>
+          <ImageList className={classes.imageList} cols={2.5}>
+            {list.map(
+              (item: {
+                poster_path: any | null | undefined;
+                title: any | null | undefined;
+              }) => (
+                <ImageListItem key={item.poster_path}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                    alt={item.title}
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    classes={{
+                      root: classes.titleBar,
+                      title: classes.title,
+                    }}
+                    actionIcon={
+                      <IconButton aria-label={`star ${item.title}`}>
+                        <StarBorderIcon className={classes.title} />
+                      </IconButton>
+                    }
+                  />
+                </ImageListItem>
+              )
+            )}
+          </ImageList>
+        </>
+      )}
     </div>
   );
 }

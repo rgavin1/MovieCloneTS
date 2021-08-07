@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         )`,
       }}
     >
-      <Container>
+      <Container maxWidth="xl">
         <div className="hero-data">
           <h1>{feature?.title}</h1>
           <ul className="hero-meta">
