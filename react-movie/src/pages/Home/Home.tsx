@@ -11,12 +11,12 @@
 import React, { useState, useEffect } from "react";
 
 // Appication Components
-import { Hero, Body } from "../components";
-import { HeroContext } from "../useContext";
+import { Hero, Body } from "../../components";
+import { HeroContext } from "../../useContext";
 
 // API
-import { resquestTrendingMedia, MediaTypes, Feature } from "../api/API";
-import { selectedFeature } from "../utils";
+import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
+import { selectedFeature } from "../../utils";
 import { CircularProgress } from "@material-ui/core";
 
 const Home: React.FC = () => {

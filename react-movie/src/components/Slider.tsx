@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 
-import { makeRequest } from "../api/API";
+import { makeRequest } from "../../services/API";
 
 import "./styles/Slider.css";
 

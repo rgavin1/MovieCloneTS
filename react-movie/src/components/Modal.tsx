@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { requestMovieTrailers } from "../api/API";
+import { requestMovieTrailers } from "../../services/API";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button } from "@material-ui/core";

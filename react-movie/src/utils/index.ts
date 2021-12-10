@@ -1,4 +1,4 @@
-import { Feature, Slider, APIKEY } from "../api/API";
+import { Feature, Slider, APIKEY } from "../../services/API";
 
 export const randomNumber = (max: number, min: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min;

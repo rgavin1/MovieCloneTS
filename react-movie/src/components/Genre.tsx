@@ -1,5 +1,5 @@
 import React from "react";
-import { genres } from "../api/API";
+import { genres } from "../../services/API";
 
 const Genre: React.FC<{ ids: any[] }> = ({ ids }) => {
   return (
