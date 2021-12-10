@@ -1,0 +1,10 @@
+.body-container {
+  position: relative;
+  top: -150px;
+}
+
+@media screen and (max-width: 778px) {
+  .body-container {
+    top: 0;
+  }
+}

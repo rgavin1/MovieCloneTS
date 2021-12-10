@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
-import { requestMovieTrailers, RawTrailerInfo } from "../api/API";
+import { requestMovieTrailers } from "../api/API";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button } from "@material-ui/core";
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: "80%",
       height: "80vh",
       maxHeight: "100vh",
-      backgroundColor: '#000',
+      backgroundColor: "#000",
       border: "2px solid #000",
       boxShadow: theme.shadows[5],
     },
@@ -35,7 +34,7 @@ const SimpleModal: React.FC<{ id: string | undefined }> = ({ id = "100" }) => {
     requestMovieTrailers(id)
       .then((data) => data.json())
       .then((res: any) => {
-        const list: RawTrailerInfo[] = res.results;
+        const list: any[] = res.results;
         // eslint-disable-next-line array-callback-return
         list.forEach(
           (trailer: {
@@ -67,12 +66,15 @@ const SimpleModal: React.FC<{ id: string | undefined }> = ({ id = "100" }) => {
       className={classes.paper}
     >
       {
-        <ReactPlayer
+        <iframe
           width="100%"
           height="100%"
-          playing={true}
-          url={`https://www.youtube.com/embed/${trailerKey}`}
-        />
+          src={`https://www.youtube.com/embed/${trailerKey}`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       }
     </div>
   );
