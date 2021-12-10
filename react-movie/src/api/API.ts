@@ -1,6 +1,6 @@
 require('dotenv').config()
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-const APIKEY: string | undefined = process.env.REACT_APP_TMDB_APIKEY
+const APIKEY: string | undefined = process.env.REACT_APPTMDB_APIKEY
 
 export const genres: GenreTypes[] = [
   { id: 28, name: "Action" },
@@ -32,33 +32,33 @@ export type GenreTypes = {
 export type RawResults = {
   page: number;
   results: string[];
-  total_pages: number;
-  total_results: number;
+  totalPages: number;
+  totalResults: number;
 };
 
 type Movie = {
   adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
+  backdropPath: string;
+  genreIds: number[];
   id: string;
-  media_type: string;
-  original_language: string;
-  original_title: string;
+  mediaType: string;
+  originalLanguage: string;
+  originalTitle: string;
   overview: string;
   popularity: string;
-  poster_path: string;
-  release_date: string;
+  posterPath: string;
+  releaseDate: string;
   title: string;
   video: boolean;
-  vote_average: number;
+  voteAverage: number;
   vote_count: number;
 };
 
 type Tv = Movie & {
-  first_air_date: string;
+  firstAirDate: string;
   name: string;
-  origin_country: string[];
-  original_name: string;
+  originCountry: string[];
+  originalName: string;
 };
 
 export type RawTrailerInfo = {
@@ -68,7 +68,7 @@ export type RawTrailerInfo = {
   key: string;
   name: string;
   official: boolean;
-  published_at: string;
+  publishedAt: string;
   site: string;
   size: number;
   type: string;
