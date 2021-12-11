@@ -1,7 +1,7 @@
 import { Button, Container } from "@material-ui/core";
 import React, { useContext } from "react";
 
-import { HeroContext } from "../useContext";
+import { HeroContext } from "../hooks/useContext";
 import { Genre, Modal } from "./index";
 import "./styles/Hero.css";
 

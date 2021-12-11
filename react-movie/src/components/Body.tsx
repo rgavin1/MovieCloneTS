@@ -1,5 +1,5 @@
 import React from "react";
-import { SliderContext } from "../useContext";
+import { SliderContext } from "../hooks/useContext";
 import { HomeSlidersList } from "../utils";
 
 import "./styles/Body.css";
