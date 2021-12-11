@@ -1,30 +1,32 @@
-import { Button, Container } from "@material-ui/core";
-import React, { useContext } from "react";
+// import { Button, Container } from "@material-ui/core";
+import React from "react";
 
-import { HeroContext } from "../hooks/useContext";
-import { Genre, Modal } from "./index";
+// import { HeroContext } from "../hooks/useContext";
+// import { Genre } from "./index";
+// FIXME: Remove CSS
 import "./styles/Hero.css";
 
-import StarIcon from "@material-ui/icons/Star";
-import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import AddIcon from "@material-ui/icons/Add";
-import InfoIcon from "@material-ui/icons/Info";
+// import StarIcon from "@material-ui/icons/Star";
+// import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+// import FavoriteIcon from "@material-ui/icons/Favorite";
+// import AddIcon from "@material-ui/icons/Add";
+// import InfoIcon from "@material-ui/icons/Info";
 
 const Hero: React.FC = () => {
-  const feature = useContext(HeroContext);
+  // const feature = useContext(HeroContext);
 
   return (
     <div
       className="hero-container"
-      style={{
-        background: "rgb(0 0 0 / 46%)",
-        backgroundImage: `url(
-          https://image.tmdb.org/t/p/original${feature?.backdrop_path}
-        )`,
-      }}
+      // style={{
+      //   background: "rgb(0 0 0 / 46%)",
+      //   backgroundImage: `url(
+      //     https://image.tmdb.org/t/p/original${feature?.backdrop_path}
+      //   )`,
+      // }}
     >
-      <Container maxWidth="xl">
+      <h1>Hero</h1>
+      {/* <Container maxWidth="xl">
         <div className="hero-data">
           <h1>{feature?.title}</h1>
           <ul className="hero-meta">
@@ -38,7 +40,7 @@ const Hero: React.FC = () => {
           </ul>
           <p>Overview {feature?.overview}</p>
           <div className="hero-genre">
-            {/* {feature?.genre_ids && <Genre ids={feature?.genre_ids} />} */}
+            {/* {feature?.genre_ids && <Genre ids={feature?.genre_ids} />} 
           </div>
           <br />
           <div className="hero-button-group">
@@ -51,10 +53,9 @@ const Hero: React.FC = () => {
             <Button title="More Info" variant="contained">
               <InfoIcon />
             </Button>
-            {Boolean(feature?.id) && <Modal id={feature?.id} />}
           </div>
         </div>
-      </Container>
+      </Container> */}
     </div>
   );
 };

@@ -1,10 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// Pages
-import { HomePage, SearchPage, TvPage, MoviePage } from "./pages";
-// Components
+
+import { HomePage } from "./pages";
 import { NavBar } from "./components";
-import "./App.css";
 
 const App: React.FC = () => {
   return (
@@ -14,15 +12,6 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/">
             <HomePage />
-          </Route>
-          <Route path="/search">
-            <SearchPage />
-          </Route>
-          <Route path="/tv">
-            <TvPage />
-          </Route>
-          <Route path="/movie">
-            <MoviePage />
           </Route>
         </Switch>
       </div>

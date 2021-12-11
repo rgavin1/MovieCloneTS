@@ -8,50 +8,43 @@
  * - [ ] Adding Components
  */
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // Appication Components
 import { Hero, Body } from "../../components";
-import { HeroContext } from "../../useContext";
+import { HeroContext } from "../../hooks/useContext";
 
 // API
-import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
-import { selectedFeature } from "../../utils";
+// import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
+// import { selectedFeature } from "../../utils";
 import { CircularProgress } from "@material-ui/core";
 
 const Home: React.FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [feature, setFeature] = useState<Feature>(null);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [feature, setFeature] = useState<Feature>(null);
 
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      resquestTrendingMedia(MediaTypes.ALL)
-        .then((res) => res.json())
-        .then((data) => {
-          setFeature(selectedFeature(data.results));
-        })
-        .catch((err) => {
-          console.warn(err);
-          setIsLoading(false);
-        });
+  // TODO: Move the services
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     // FIXME: Please spell my name correctly
+  //     resquestTrendingMedia(MediaTypes.ALL)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setFeature(selectedFeature(data.results));
+  //       })
+  //       .catch((err) => {
+  //         console.warn(err);
+  //         setIsLoading(false);
+  //       });
 
-      setIsLoading(false);
-    }, 500);
-  }, []);
+  //     setIsLoading(false);
+  //   }, 500);
+  // }, []);
 
   return (
     <>
-      {isLoading ? (
-        <CircularProgress className="loader" />
-      ) : (
-        <div className="page">
-          <HeroContext.Provider value={feature}>
-            <Hero />
-          </HeroContext.Provider>
-          <Body />
-        </div>
-      )}
+     <h1>Home</h1>
     </>
   );
 };

@@ -1,4 +1,5 @@
-export { default as HomePage } from "./Home";
-export { default as SearchPage } from "./Search";
-export { default as TvPage } from "./TV";
-export { default as MoviePage } from "./Movie";
+export { default as HomePage } from "./Home/Home";
+export { default as MoviePage } from "./Movie/Movie";
+export { default as SearchPage } from "./Search/Search";
+export { default as TvPage } from "./TV/TV";
+export { default as Contact } from "./Contact/Contact";
