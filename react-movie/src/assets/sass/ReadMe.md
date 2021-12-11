@@ -1,12 +1,4 @@
-### Install Sass
-
-```bash
-yarn add sass
-```
-
-### File Structure
-
-Used The 7-1 Pattern structure found in Sass [7-1 Pattern](https://sass-guidelin.es/#architecture/the-7-1-pattern)
+Used The 7 - 1 Pattern structure found in Sass [7-1 Pattern](https://sass-guidelin.es/#architecture/the-7-1-pattern)
 
 ```bash
 sass/
@@ -55,7 +47,3 @@ sass/
 |
 `– main.scss              # Main Sass file
 ```
-
-### Reset File
-
-[Link](https://www.boag.online/blog/css-reset)

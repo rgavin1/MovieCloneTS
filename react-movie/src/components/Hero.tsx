@@ -1,4 +1,3 @@
-// import { Button, Container } from "@material-ui/core";
 import React from "react";
 
 // import { HeroContext } from "../hooks/useContext";
@@ -6,11 +5,6 @@ import React from "react";
 // FIXME: Remove CSS
 import "./styles/Hero.css";
 
-// import StarIcon from "@material-ui/icons/Star";
-// import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-// import AddIcon from "@material-ui/icons/Add";
-// import InfoIcon from "@material-ui/icons/Info";
 
 const Hero: React.FC = () => {
   // const feature = useContext(HeroContext);

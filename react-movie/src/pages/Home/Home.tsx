@@ -11,13 +11,12 @@
 import React from "react";
 
 // Appication Components
-import { Hero, Body } from "../../components";
-import { HeroContext } from "../../hooks/useContext";
+// import { Hero, Body } from "../../components";
+// import { HeroContext } from "../../hooks/useContext";
 
 // API
 // import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
 // import { selectedFeature } from "../../utils";
-import { CircularProgress } from "@material-ui/core";
 
 const Home: React.FC = () => {
   // const [isLoading, setIsLoading] = useState<boolean>(false);
