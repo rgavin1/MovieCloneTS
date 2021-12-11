@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navigation: React.FC = () => {
+const Container: React.FC = () => {
   return (
     <nav>
       <ul>
@@ -22,4 +22,4 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
+export default Container;
