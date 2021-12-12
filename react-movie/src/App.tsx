@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "./assets/sass/main.scss"
 
-import { HomePage } from "./pages";
+// import { HomePage } from "./pages";
 import { NavBar } from "./components";
 import { Content } from "./layouts";
 
@@ -12,6 +12,9 @@ const App: React.FC = () => {
     <Router>
       <div className="movieApp">
         <NavBar />
+        {/* TODO: Set Content to take props url, 
+          * page_name, and return a list of routes
+          */}
         <Content />
         {/* <Switch>
           <Route exact path="/">

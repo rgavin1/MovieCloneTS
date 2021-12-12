@@ -1,5 +1,8 @@
-@import "./components/index";
+@use "./base/reset";
+@use "./layout/content";
+@use "./layout/navigation";
 
 .movieApp {
   display: flex;
+  min-height: 100vh;
 }

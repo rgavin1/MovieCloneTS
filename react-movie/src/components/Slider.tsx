@@ -2,8 +2,6 @@
 
 // import { makeRequest } from "../../services/API";
 
-import "./styles/Slider.css";
-
 // FIXME: Please fix this 
 // import { SliderContext } from "../hooks/useContext";
 
@@ -25,48 +23,48 @@ import "./styles/Slider.css";
  *   },
  * ];
  */
-const itemData = [
-  {
-    img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "/static/images/image-list/burgers.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "/static/images/image-list/burgers.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "/static/images/image-list/burgers.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-    title: "some",
-    author: "ok",
-  },
-  {
-    img: "/static/images/image-list/burgers.jpg",
-    title: "some",
-    author: "ok",
-  },
-];
+// const itemData = [
+//   {
+//     img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "/static/images/image-list/burgers.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "/static/images/image-list/burgers.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "/static/images/image-list/burgers.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+//   {
+//     img: "/static/images/image-list/burgers.jpg",
+//     title: "some",
+//     author: "ok",
+//   },
+// ];
 
 export default function SingleLineImageList() {
 //   const classes = useStyles();

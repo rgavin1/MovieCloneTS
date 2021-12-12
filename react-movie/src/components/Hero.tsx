@@ -2,8 +2,7 @@ import React from "react";
 
 // import { HeroContext } from "../hooks/useContext";
 // import { Genre } from "./index";
-// FIXME: Remove CSS
-import "./styles/Hero.css";
+
 
 
 const Hero: React.FC = () => {
