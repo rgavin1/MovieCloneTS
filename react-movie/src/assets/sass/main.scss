@@ -1,6 +1,7 @@
 @use "./base/reset";
 @use "./layout/content";
 @use "./layout/navigation";
+@use "./layout/profile";
 
 .movieApp {
   display: flex;

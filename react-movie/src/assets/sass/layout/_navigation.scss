@@ -9,12 +9,19 @@
   bottom: 0;
   z-index: 99;
 
+  ul {
+    background: red;
+    text-align: center;
+  }
+
   @media screen and (min-width: $sm-tablet) {
     height: 100vh;
     top: 0;
     left: 0;
     width: 100px;
     transition: $navbar-transition;
+    display: flex;
+    flex-direction: column;
 
     /* Animations */
     &:hover {

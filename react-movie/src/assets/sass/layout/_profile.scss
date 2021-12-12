@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as *;
+
+#profile {
+    background: lightskyblue;
+    margin-top: auto;
+
+     @media screen and (max-width: $sm-tablet) {
+        display: none;
+     }
+}
