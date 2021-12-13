@@ -1,17 +1,64 @@
 @use "../abstracts/variables" as *;
 
 .navbarContainer {
-  background: blue;
+  background: $navbar;
   width: 100vw;
-  height: inherit;
   position: absolute;
   top: unset;
   bottom: 0;
   z-index: 99;
+  display: flex;
+  flex-direction: row;
 
-  ul {
-    background: red;
-    text-align: center;
+  #navbarMenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      display: flex;
+
+      a {
+        width: 100%;
+        padding: 25px 0;
+        margin: 1px 0;
+        color: $icon-default;
+        font-size: 4vmin;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $primary-bg;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .menuItemIconContainer {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .showMenuItemName {
+    display: none;
+    transition: display 10s ease-in-out;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  // TODO: Fix this UI later
+  #profile {
+    background: #282828;
+    margin-top: auto;
+    margin-bottom: 33px;
+    font-size: 3vmin;
+    color: #141414;
+    padding: 9px 12px;
+    border-radius: 50%;
   }
 
   @media screen and (min-width: $sm-tablet) {
@@ -22,11 +69,37 @@
     transition: $navbar-transition;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    #logo {
+      display: initial;
+      font-size: 3.5vmin;
+      padding: 36px 0;
+      transition: font-size 0.5s ease;
+    }
+
+    #navbarMenu {
+      display: initial;
+
+      li {
+        a {
+          font-size: 2vmin;
+        }
+      }
+    }
 
     /* Animations */
     &:hover {
-      background: lightseagreen;
       width: 200px;
+
+      #logo {
+        font-size: 8vmin;
+      }
+
+      .showMenuItemName {
+        display: initial;
+        margin-left: auto;
+      }
     }
   }
 }

@@ -1,4 +1,6 @@
+@use "../abstracts/variables" as *;
+
 .contentContainer {
-  background-color: aqua;
+  background-color: $primary-bg;
   width: 100%;
 }
