@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as *;
+
+#header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: yellow;
+
+  @media screen and (min-width: $sm-tablet) {
+    display: none;
+  }
+}

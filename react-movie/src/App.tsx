@@ -5,12 +5,13 @@ import "./assets/sass/main.scss"
 
 // import { HomePage } from "./pages";
 import { NavBar } from "./components";
-import { Content } from "./layouts";
+import { Content, Header } from "./layouts";
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="movieApp">
+        <Header />
         <NavBar />
         {/* TODO: Set Content to take props url, 
           * page_name, and return a list of routes

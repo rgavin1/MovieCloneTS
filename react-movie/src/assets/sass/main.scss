@@ -2,6 +2,7 @@
 @use "./layout/content";
 @use "./layout/navigation";
 @use "./layout/profile";
+@use "./layout/header";
 
 .movieApp {
   display: flex;
