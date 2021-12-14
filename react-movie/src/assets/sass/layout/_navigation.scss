@@ -35,7 +35,7 @@
   }
 
   .menuItemIconContainer {
-    width: 40%;
+    width: 49%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -61,11 +61,12 @@
     border-radius: 50%;
   }
 
+
   @media screen and (min-width: $sm-tablet) {
     height: 100vh;
     top: 0;
     left: 0;
-    width: 100px;
+    width: 65px;
     transition: $navbar-transition;
     display: flex;
     flex-direction: column;
@@ -76,6 +77,12 @@
       font-size: 3.5vmin;
       padding: 36px 0;
       transition: font-size 0.5s ease;
+    }
+
+
+    // FIXME: Remove This
+    #test-topper {
+      display: none;
     }
 
     #navbarMenu {
@@ -91,10 +98,6 @@
     /* Animations */
     &:hover {
       width: 200px;
-
-      #logo {
-        font-size: 8vmin;
-      }
 
       .showMenuItemName {
         display: initial;
