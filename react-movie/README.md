@@ -42,3 +42,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### Tools Used
 
 - Material UI
+
+
+### Inspiration
+![Netflix Website/Application](https://upload.wikimedia.org/wikipedia/en/f/f4/Netflix_-_English.jpg)
