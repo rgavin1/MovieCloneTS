@@ -1,9 +1,6 @@
-@use "./base/reset";
-@use "./layout/content";
-@use "./layout/navigation";
-@use "./layout/profile";
-@use "./layout/header";
-@use "./components/index";
+@use "./base";
+@use "./components";
+@use "./layout";
 
 .movieApp {
   display: flex;
