@@ -2,7 +2,7 @@ import React from "react";
 
 const Container: React.FC = () => {
   return (
-    <div id="hero" style={{ backgroundImage: "url()" }}>
+    <div id="hero">
       <div id="featureDescription">
         <h1 className="heading-one">
           Night of the Day of the Dawn of the Son of the Bride of the Return of
