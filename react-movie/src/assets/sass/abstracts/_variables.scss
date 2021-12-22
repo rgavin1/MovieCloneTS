@@ -1,10 +1,103 @@
+@use "sass:map";
+
 /* Colors  */
+$fontcolor-primary: #ffffff;
 $icon-default: #a1a1a1;
 $navbar-hover: #00000054;
-$navbar: #0e0e0ef0;
+$navbar: #0e0e0e7d;
+$navbar-border: 1px solid #fff3;
 $primary-bg: #020202;
 $overlay-bg: #2e2e2ecf;
+$color-success: #84ff00de;
 
+/* Font Family */
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+
+/* Font Size */
+$heading-one-size: 2.5vmax;
+$heading-two-size: 2.45vmax;
+// $heading-three-size: ;
+// $heading-four-size: ;
+// $heading-five-size: ;
+$paragraph-size: 1.5vmax;
+$text-size-small: 1.2vmax;
+
+/* Font Weight */
+$font-weight-default: 400;
+$font-weight-medium: 500;
+/* ============================= 
+ * Note: Correct Line Spacing 
+ * Multiply the font size * 1.5
+ * =============================
+ */
+
+/* Default Font Styles */
+$line-height-default: 150%;
+$line-height-sm: 130%;
+$line-height-lg: 160%;
+$letter-spacing-default: 0.12px;
+$letter-spacing-small: 2px;
+$letter-spacing-lg: 0.16px;
+
+$word-spacing-heading: 0.16px;
+
+/* Default Styles */
+.heading-one {
+  font-family: $poppins;
+  color: $fontcolor-primary;
+  font-size: $heading-one-size;
+  line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-default;
+  word-spacing: $word-spacing-heading;
+}
+
+.heading-two {
+  font-family: $poppins;
+  color: $fontcolor-primary;
+  font-size: $heading-two-size;
+  line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-default;
+  word-spacing: $word-spacing-heading;
+  padding-left: 8%;
+}
+
+.content {
+  font-family: $roboto;
+  color: $fontcolor-primary;
+  line-height: $line-height-lg;
+  letter-spacing: $letter-spacing-lg;
+  word-spacing: $word-spacing-heading;
+  font-size: $paragraph-size;
+}
+
+// TODO: Fix this please
+/* Lists */
+.list-genre {
+  color: $fontcolor-primary;
+  display: flex;
+  font-family: $poppins;
+  font-size: $text-size-small;
+  font-weight: $font-weight-medium;
+  justify-content: space-between;
+  margin-top: 10px;
+  max-width: 65%;
+
+  li {
+    position: relative;
+
+    &li:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -9px;
+      transform: translate(0px, -50%);
+      background: $icon-default;
+      width: 3px;
+      height: 15%;
+    }
+  }
+}
 /* Screen widths */
 $lg-tablet: "991px";
 $sm-tablet: "768px";

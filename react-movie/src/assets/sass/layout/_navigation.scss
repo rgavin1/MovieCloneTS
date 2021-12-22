@@ -2,6 +2,7 @@
 
 .navbarContainer {
   background: $navbar;
+  border-right: $navbar-border;
   width: 100vw;
   position: absolute;
   top: unset;

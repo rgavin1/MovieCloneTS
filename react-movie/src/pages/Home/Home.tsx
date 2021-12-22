@@ -9,7 +9,7 @@
  */
 
 import React from "react";
-import { Hero } from "../../components";
+import { Hero, Slider } from "../../components";
 
 // Appication Components
 // import { Hero, Body } from "../../components";
@@ -45,6 +45,20 @@ const Home: React.FC = () => {
   return (
     <div id="home">
       <Hero />
+      <div className="section">
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+        <Slider />
+      </div>
     </div>
   );
 };

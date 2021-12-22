@@ -46,3 +46,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### Inspiration
 ![Netflix Website/Application](https://upload.wikimedia.org/wikipedia/en/f/f4/Netflix_-_English.jpg)
+
+
+### Recommendations
+
+#### WCAG 2.1 – 1.4.12 Text Spacing (AA)
+
+Here are four tips for designing and producing website content controlled by CSS text style properties:
+
+- Line height (line spacing) to at least 1.5 times the font size;
+- Spacing following paragraphs to at least 2 times the font size;
+- Letter spacing (tracking) to at least 0.12 times the font size;
+- Word spacing to at least 0.16 times the font size.
+
+[SOURCE]

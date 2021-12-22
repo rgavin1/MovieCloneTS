@@ -1,0 +1,27 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+
+  .carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.carousel__button--next {
+      right: 0;
+      z-index: 2;
+    }
+    // .carousel__button--prev {
+
+    // }
+  }
+
+  ul {
+    display: flex;
+    overflow-y: hidden;
+
+    li {
+      padding-right: 15px;
+    }
+  }
+}

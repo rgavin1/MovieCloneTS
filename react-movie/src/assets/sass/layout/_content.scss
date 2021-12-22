@@ -2,5 +2,19 @@
 
 .contentContainer {
   background-color: $primary-bg;
+  overflow-y: auto;
+  height: 100vh;
   width: 100%;
+
+  .section {
+    .subheading {
+      color: #fff;
+      font-size: 2.45vmax;
+      padding-left: 8%;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 1.5px;
+      word-spacing: 0.12px;
+      text-transform: uppercase;
+    }
+  }
 }

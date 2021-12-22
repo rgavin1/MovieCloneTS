@@ -2,11 +2,40 @@
 
 #hero {
   width: 100%;
-  padding: 5% 45% 19% 8%;
+  padding: 10% 30% 10% 8%;
   background: $overlay-bg;
   background-image: url("https://www.desktopbackground.org/p/2013/04/20/563589_poster-movie-film-movies-posters-free-desktop-backgrounds-and_800x500_h.jpg");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: cover;
   background-blend-mode: overlay;
+
+
+  #feature-actors {
+    margin-top: 25px;
+  }
+
+  #feature-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    width: 80%;
+
+    // Rating 
+    li:first-child {
+      color: $color-success;
+    }
+
+    // Video + Sound Quality
+    li:nth-child(4), li:nth-child(5) {
+    border: 1px solid $fontcolor-primary;
+    padding: 1px 10px;
+    text-transform: uppercase;
+    word-spacing: 0;
+    letter-spacing: 0;
+    }
+  }
 }
