@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import { makeRequest } from "../../services/API";
 
@@ -495,8 +496,12 @@ const Container: React.FC = () => {
         <button className="carousel__button carousel__button--prev" onClick={moveToPrevSlide}>Prev</button>
         <ul id="carousel-container"  >
           {itemData.results.map((feature, index) => {
-            // TODO: Add alt text
-            return <li key={index} className="carousel__image" ><img src={`https://image.tmdb.org/t/p/w185/${feature.poster_path}`} alt="" /></li>
+            return <li key={index} className="carousel__image" >
+              <Link className="link" to={`/${feature.media_type}/${feature.id}`}>
+                <img src={`https://image.tmdb.org/t/p/w185/${feature.poster_path}`} alt={feature.name ? feature.name : feature.title} />
+                <p className="feature-title">{feature.name ? feature.name : feature.title}</p>
+              </Link>
+            </li>
           })}
         </ul>
       </div >

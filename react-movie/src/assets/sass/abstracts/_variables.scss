@@ -71,6 +71,11 @@ $word-spacing-heading: 0.16px;
   font-size: $paragraph-size;
 }
 
+.link {
+  text-decoration: none;
+  color: $fontcolor-primary;
+}
+
 // TODO: Fix this please
 /* Lists */
 .list-genre {

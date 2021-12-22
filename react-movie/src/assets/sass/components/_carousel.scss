@@ -20,8 +20,19 @@
     display: flex;
     overflow-y: hidden;
 
-    li {
+    .carousel__image {
       padding-right: 15px;
+      cursor: pointer;
+
+      .feature-title {
+        text-align: center;
+      }
+
+      &:hover {
+        img {
+          border: 1px solid #fff;
+        }
+      }
     }
   }
 }
