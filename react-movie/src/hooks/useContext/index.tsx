@@ -1,7 +1,10 @@
 import { createContext } from "react";
+import { Feature } from "../../utils/types";
 
-import { Feature } from "../../services/API";
+
 
 export const HeroContext = createContext<Feature>(null);
+
+export { }
 
 // export const SliderContext = createContext<Slider>({});

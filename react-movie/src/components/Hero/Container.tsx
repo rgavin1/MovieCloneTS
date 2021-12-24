@@ -1,37 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Feature, Genre, Genres, RawResults } from "../../utils/types";
 
-const Container: React.FC = () => {
+
+
+
+const Container: React.FC<{ results?: RawResults; }> = ({ results }) => {
+  const [feature, setFeature] = useState<any>(null);
+
+  useEffect(() => setFeature(results?.results[1]), [results]);
+
   return (
-    <div id="hero">
+    <div id="hero" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${feature?.backdrop_path})` }}>
       <div id="featureDescription">
         <h1 className="heading-one">
-          Night of the Day of the Dawn of the Son of the Bride of the Return of
-          the Revenge of the Terror of the Attack of the Evil Mutant Hellbound
-          Flesh Eating Crawling Alien Zombified Subhumanoid Living Dead, Part 5
+          {feature?.title ? feature?.title : feature?.name}
         </h1>
         <ul id="feature-data">
-          <li>99% Rating</li>
+          <li>{feature?.vote_average} Rating</li>
           <li>2021</li>
           <li>2 Seasons</li>
           <li>4k ultra HD</li>
           <li>5:1</li>
         </ul>
         <p id="feature-description" className="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi atque
-          natus unde eius quae, alias laudantium hic, ipsum nostrum labore autem
-          illo quo eaque aspernatur possimus fugiat iure officia cum.
+          {feature?.overview}
         </p>
         <p id="feature-actors" className="content">
           Lorem Ipsum, Dolor Sit Amet, Consectetur Adipisicing
         </p>
         <ul id="feature-genre" className="list-genre">
-          <li>Genre 1</li>
-          <li>Genre 2</li>
-          <li>Genre 3</li>
-          <li>Genre 4</li>
-          <li>Genre 5</li>
-          <li>Genre 6</li>
-          <li>Genre 7</li>
+          {Genres.map((genre: any) => {
+            if (!(feature?.genre_ids.includes(genre.id))) return null;
+            return <li>{genre.name}</li>
+          })}
         </ul>
       </div>
     </div>

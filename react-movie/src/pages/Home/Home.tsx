@@ -10,6 +10,7 @@
 
 import React from "react";
 import { Hero, Slider } from "../../components";
+import { itemData } from "../../components/Slider/Container";
 
 // Appication Components
 // import { Hero, Body } from "../../components";
@@ -18,6 +19,7 @@ import { Hero, Slider } from "../../components";
 // API
 // import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
 // import { selectedFeature } from "../../utils";
+
 
 const Home: React.FC = () => {
   // const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -42,9 +44,10 @@ const Home: React.FC = () => {
   //   }, 500);
   // }, []);
 
+
   return (
     <div id="home">
-      <Hero />
+      <Hero results={itemData} />
       <div className="section">
         <Slider />
         <Slider />

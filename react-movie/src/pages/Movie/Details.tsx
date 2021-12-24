@@ -1,10 +1,11 @@
 import React from "react";
+import { Hero } from "../../components";
 
 
 const Details: React.FC = () => {
     return (
-        <div style={{ color: "#fff", fontSize: "96px" }}>
-            Movie Details
+        <div>
+            <Hero />
         </div>
     )
 }
