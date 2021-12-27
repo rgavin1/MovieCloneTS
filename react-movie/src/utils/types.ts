@@ -32,27 +32,27 @@ export type Genre = {
 
 export type Movie = {
     adult: boolean;
-    backdropPath: string;
-    genreIds: number[];
+    backdrop_path: string;
+    genre_ids: number[];
     id: string;
-    mediaType: string;
-    originalLanguage: string;
-    originalTitle: string;
+    media_type: string;
+    original_language: string;
+    original_title: string;
     overview: string;
     popularity: string;
-    posterPath: string;
-    releaseDate: string;
+    poster_path: string;
+    release_date: string;
     title: string;
     video: boolean;
-    voteAverage: number;
+    vote_average: number;
     vote_count: number;
 };
 
 export type Tv = Movie & {
-    firstAirDate: string;
+    first_air_date: string;
     name: string;
-    originCountry: string[];
-    originalName: string;
+    origin_country: string[];
+    original_name: string;
 };
 
 export type RawTrailerInfo = {
@@ -62,13 +62,13 @@ export type RawTrailerInfo = {
     key: string;
     name: string;
     official: boolean;
-    publishedAt: string;
+    published_at: string;
     site: string;
     size: number;
     type: string;
 };
 
-export type Feature = (Movie & Tv) | null;
+export type Feature = Tv | null;
 
 //FIXME: Change results type
 export type RawResults = {

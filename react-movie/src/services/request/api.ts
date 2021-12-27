@@ -1,4 +1,4 @@
-import { MediaTypes } from "../utils/types";
+import { MediaTypes } from "../../utils/types";
 
 require('dotenv').config()
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions

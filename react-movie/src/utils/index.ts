@@ -29,4 +29,12 @@
 //   },
 // ];
 
+export const randomNumber = (length: number) => Math.floor(Math.random() * length)
+
+export const getYearFromDate = (date: string | undefined) => {
+    if (!date) return;
+    return date.split("-")[0];
+}
+
+
 export const index = {}
