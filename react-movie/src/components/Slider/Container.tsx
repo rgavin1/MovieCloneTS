@@ -451,7 +451,7 @@ export const itemData = {
   "total_results": 20000
 }
 
-const Container: React.FC = () => {
+const Container: React.FC<{ name?: string; }> = ({ name = "Select title name" }) => {
   const [scrollPerClick, setScrollPerClick] = useState(1)
   const imageWidth = 200;
 
@@ -490,7 +490,7 @@ const Container: React.FC = () => {
 
   return (
     <>
-      <h2 className="heading-two">Sub Heading</h2>
+      <h2 className="heading-two">{name}</h2>
       <div className="carousel">
         <button className="carousel__button carousel__button--next" onClick={moveToNextSlide}>Next</button>
         <button className="carousel__button carousel__button--prev" onClick={moveToPrevSlide}>Prev</button>

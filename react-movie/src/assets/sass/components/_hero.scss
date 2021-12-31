@@ -2,16 +2,29 @@
 
 #hero {
   width: 100%;
-  padding: 16% 30% 16% 8%;
+  padding: 10% 40% 10% 8%;
   background: $overlay-bg;
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: cover;
+  background-size: 100%;
   background-blend-mode: overlay;
-
+  background-attachment: fixed;
 
   #feature-credits {
     margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      &:first-of-type {
+        &:before {
+          content: "";
+        }
+      }
+      &:before {
+        content: ", ";
+      }
+    }
   }
 
   #feature-data {
@@ -23,18 +36,19 @@
     font-size: 18px;
     width: 80%;
 
-    // Rating 
+    // Rating
     li:first-child {
       color: $color-success;
     }
 
     // Video + Sound Quality
-    li:nth-child(4), li:nth-child(5) {
-    border: 1px solid $fontcolor-primary;
-    padding: 1px 10px;
-    text-transform: uppercase;
-    word-spacing: 0;
-    letter-spacing: 0;
+    li:nth-child(4),
+    li:nth-child(5) {
+      border: 1px solid $fontcolor-primary;
+      padding: 1px 10px;
+      text-transform: uppercase;
+      word-spacing: 0;
+      letter-spacing: 0;
     }
   }
 }

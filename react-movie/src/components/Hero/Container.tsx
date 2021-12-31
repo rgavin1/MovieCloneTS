@@ -1,43 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { getYearFromDate, randomNumber } from "../../utils";
-import { Feature, Genre, Genres, RawResults } from "../../utils/types";
-import { movie } from "../../services/request";
+import { feature } from "../../services/request/feature";
+import { getYearFromDate } from "../../utils";
+import { Feature, Genre, Genres, Member, RawResults } from "../../utils/types";
 
 
 
 const Container: React.FC<{ results?: RawResults; }> = ({ results }) => {
-  const [feature, setFeature] = useState<Feature>(null);
+  const [details, setDetails] = useState<Feature>(null);
+  const [cast, setCast] = useState<Member[] | null>(null);
 
-
-  useEffect(() => setFeature(results?.results[randomNumber(results.results.length)]), [results]);
   useEffect(() => {
-    // TODO: ADD CREDITS
-    console.log("Call the api");
-    movie.creditsById();
-  }, []);
+
+    (async () => {
+      const response = await feature.getDetails(results as RawResults);
+      setDetails(response.feature);
+      setCast(response.cast);
+    })()
+
+  }, [results]);
 
   return (
-    <div id="hero" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${feature?.backdrop_path})` }}>
+    <div id="hero" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${details?.backdrop_path})` }}>
       <div id="featureDescription">
         <h1 className="heading-one">
-          {feature?.title ? feature?.title : feature?.name}
+          {details?.title ? details?.title : details?.name}
         </h1>
         <ul id="feature-data">
-          <li>{feature?.vote_average} Rating</li>
-          <li>{getYearFromDate((feature?.first_air_date || feature?.release_date) as string)}</li>
+          <li>{details?.vote_average} Rating</li>
+          <li>{getYearFromDate((details?.first_air_date || details?.release_date) as string)}</li>
           <li style={{ display: "none" }}>2 Seasons</li>
           <li>4k ultra HD</li>
           <li>5:1</li>
         </ul>
         <p id="feature-description" className="content">
-          {feature?.overview}
+          {details?.overview}
         </p>
-        <p id="feature-credits" className="content">
-          {feature?.media_type === "movie" ? "Movie" : "TV"}
-        </p>
+        <ul id="feature-credits" className="content">
+          {cast?.map((member: Member, index: number) =>
+            <li key={index}>{member}</li>
+          )}
+        </ul>
         <ul id="feature-genre" className="list-genre">
           {Genres.map((genre: Genre, index) => {
-            if (!(feature?.genre_ids.includes(genre.id))) return null;
+            if (!(details?.genre_ids.includes(genre.id))) return null;
             return <li key={index}>{genre.name}</li>
           })}
         </ul>

@@ -1,62 +1,21 @@
-/**
- * Things to Do
- * - [x] Print the Selected Feature and Content
- * - [ ] Update the Favicon and Tab Name
- * - [ ] Create a function for loading a random feature
- * - [x] Create a Hero Image
- * - [ ] Create a Provider for the Hero Image
- * - [ ] Adding Components
- */
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Hero, Slider } from "../../components";
 import { itemData } from "../../components/Slider/Container";
-
-// Appication Components
-// import { Hero, Body } from "../../components";
-// import { HeroContext } from "../../hooks/useContext";
-
-// API
-// import { resquestTrendingMedia, MediaTypes, Feature } from "../../services/API";
-// import { selectedFeature } from "../../utils";
+import { RawResults } from "../../utils/types";
 
 
 const Home: React.FC = () => {
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
-  // const [feature, setFeature] = useState<Feature>(null);
+  const [results, setResults] = useState<RawResults>()
 
-  // TODO: Move the services
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   setTimeout(() => {
-  //     // FIXME: Please spell my name correctly
-  //     resquestTrendingMedia(MediaTypes.ALL)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setFeature(selectedFeature(data.results));
-  //       })
-  //       .catch((err) => {
-  //         console.warn(err);
-  //         setIsLoading(false);
-  //       });
-
-  //     setIsLoading(false);
-  //   }, 500);
-  // }, []);
-
+  useEffect(() => {
+    setResults(itemData)
+  }, [results])
 
   return (
     <div id="home">
-      <Hero results={itemData} />
+      <Hero results={results} />
       <div className="section">
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
+        <Slider name="TITLE" />
         <Slider />
         <Slider />
         <Slider />

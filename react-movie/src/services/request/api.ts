@@ -2,7 +2,7 @@ import { MediaTypes } from "../../utils/types";
 
 require('dotenv').config()
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-const APIKEY: string | undefined = process.env.REACT_APPTMDB_APIKEY
+const APIKEY: string | undefined = process.env.REACT_APP_TMDB_APIKEY
 
 /**
  * I dont know why this function returns the same fu*kin'
