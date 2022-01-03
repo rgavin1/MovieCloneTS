@@ -4,7 +4,8 @@ import { RawResults } from "../../utils/types";
 import { popular } from "./mocks/popular";
 
 const Tv: React.FC = () => {
-  const [results, setResults] = useState<RawResults>()
+  const [results, setResults] = useState<RawResults>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setResults(popular);
@@ -12,12 +13,12 @@ const Tv: React.FC = () => {
 
   return (
     <div id="tv">
-      <Hero results={results} />
+      <Hero results={results} isLoading={isLoading} setIsLoading={setIsLoading} />
       <div className="section">
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
       </div>
     </div>
   );

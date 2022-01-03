@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Hero, Slider } from "../../components";
-import { itemData } from "../../components/Slider/Container";
+import { itemData } from "../../components/Slider/mock/itemData";
 import { RawResults } from "../../utils/types";
 
 
 const Home: React.FC = () => {
-  const [results, setResults] = useState<RawResults>()
+  const [results, setResults] = useState<RawResults>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setResults(itemData)
@@ -13,13 +14,13 @@ const Home: React.FC = () => {
 
   return (
     <div id="home">
-      <Hero results={results} />
+      <Hero results={results} isLoading={isLoading} setIsLoading={setIsLoading} />
       <div className="section">
-        <Slider name="TITLE" />
-        <Slider />
-        <Slider />
-        <Slider />
-        <Slider />
+        <Slider name="TITLE" isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
+        <Slider isLoading={isLoading} />
       </div>
     </div>
   );

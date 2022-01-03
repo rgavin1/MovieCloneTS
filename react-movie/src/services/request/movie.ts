@@ -16,6 +16,12 @@ const getCastById = async (id: string): Promise<Member[]> => {
     return cast.map((member: Member) => member.name);
 }
 
+const getDetailsById = async (id: string): Promise<any> => {
+    const response = await axios.get(`${URL}/${id}?api_key=${APIKEY}&language=en-US`);
+    return response.data;
+}
+
 export const movie = {
-    getCastById
+    getCastById,
+    getDetailsById
 }

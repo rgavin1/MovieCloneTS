@@ -1,0 +1,41 @@
+.shimmer {
+  width: 60%;
+  height: 2.75vmax;
+  border-radius: 2px;
+  background-color: #00000059;
+  background-image: linear-gradient(
+    65deg,
+    hsl(0deg 0% 19% / 26%) 0%,
+    hsl(0deg 0% 23% / 15%) 25%
+  );
+  background-repeat: no-repeat;
+  animation-name: shimmering;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &.description {
+    margin-bottom: 10px;
+    height: 1.75vmax;
+    width: 100%;
+    color: transparent;
+
+    &:last-child {
+      width: 80%;
+    }
+  }
+
+  &.single-line {
+    height: 1.75vmax;
+    width: 100%;
+  }
+}
+
+@keyframes shimmering {
+  from {
+    background-position: -468px 0;
+  }
+  to {
+    background-position: 468px 0;
+  }
+}
