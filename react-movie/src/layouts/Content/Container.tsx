@@ -5,7 +5,7 @@ import { Routes } from '../../pages/routes';
 
 const Container: React.FC = () => {
     return (
-        <div className="contentContainer">
+        <div className="content-container">
             <Switch>
                 {Routes.map(route => {
                     return <Route exact path={route.pathname} component={route.component} />

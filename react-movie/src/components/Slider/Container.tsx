@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import SkeletonTitle from "../../layouts/Skeleton/SkeletonTitle";
+import { SkeletonTitle } from "../../layouts";
 import { itemData } from "./mock/itemData";
 
 

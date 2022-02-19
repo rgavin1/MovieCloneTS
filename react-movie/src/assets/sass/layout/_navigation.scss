@@ -1,8 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .navbarContainer {
-  background: $navbar;
-  border-right: $navbar-border;
+  background: transparent;
   width: 100vw;
   position: absolute;
   top: unset;
@@ -99,6 +98,7 @@
     /* Animations */
     &:hover {
       width: 200px;
+      background: $navbar;
 
       .showMenuItemName {
         display: initial;

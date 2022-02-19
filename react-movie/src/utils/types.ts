@@ -1,60 +1,63 @@
+export enum Media {
+    MOVIE = "movie",
+    TV = "tv",
+    ALL = "all",
+    PERSON = "person",
+}
+
+export type MediaType = Required<Media.TV> | Required<Media.MOVIE>;
+export type Feature = TvListResult | null;
+export type RawResponse = Feature[] & Member[]
+export type Genre = { [key: number]: string }
 export type PageRoute = {
     pathname: string;
     component: React.FC<{}>;
 }
-
-export const Genres: Genre[] = [
-    { id: 28, name: "Action" },
-    { id: 12, name: "Adventure" },
-    { id: 16, name: "Animation" },
-    { id: 35, name: "Comedy" },
-    { id: 80, name: "Crime" },
-    { id: 99, name: "Documentary" },
-    { id: 18, name: "Drama" },
-    { id: 10751, name: "Family" },
-    { id: 14, name: "Fantasy" },
-    { id: 36, name: "History" },
-    { id: 27, name: "Horror" },
-    { id: 10402, name: "Music" },
-    { id: 9648, name: "Mystery" },
-    { id: 10749, name: "Romance" },
-    { id: 878, name: "Science Fiction" },
-    { id: 10770, name: "TV Movie" },
-    { id: 53, name: "Thriller" },
-    { id: 10752, name: "War" },
-    { id: 37, name: "Western" },
-];
-
-export type Genre = {
-    id: number;
-    name: string;
-};
-
-export type Movie = {
-    adult: boolean;
-    backdrop_path: string;
+export type RawResult = {
+    backdrop_path: string | null;
     genre_ids: number[];
-    id: string;
-    media_type: string;
+    id: number;
     original_language: string;
-    original_title: string;
     overview: string;
-    popularity: string;
-    poster_path: string;
-    release_date: string;
-    title: string;
-    video: boolean;
+    popularity: number;
+    poster_path: string | null;
     vote_average: number;
     vote_count: number;
-};
-
-export type Tv = Movie & {
+}
+export type TvListResult = RawResult & {
     first_air_date: string;
     name: string;
     origin_country: string[];
     original_name: string;
+    media_type: Required<Media.TV>;
+}
+export type MovieListResult = RawResult & {
+    adult: boolean;
+    original_title: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    media_type: Required<Media.MOVIE>;
+}
+export type PersonTvListResult = TvListResult;
+export type PersonMovieListResult = MovieListResult;
+export type KnownFor = PersonTvListResult | PersonMovieListResult;
+export type PeopleListResult = {
+    adult: boolean;
+    id: number;
+    known_for: KnownFor[];
+    name: string;
+    popularity: number;
+    profile_path: string | null;
+    media_type: Required<Media.PERSON>;
+}
+export type SearchResults = TvListResult | MovieListResult | PeopleListResult;
+export type RawSearchResponse = {
+    page: number;
+    results: SearchResults[];
+    total_pages: number;
+    total_results: number;
 };
-
 export type RawTrailerInfo = {
     id: string;
     iso_3166_1: string;
@@ -67,24 +70,6 @@ export type RawTrailerInfo = {
     size: number;
     type: string;
 };
-
-export type Feature = Tv | null;
-
-//FIXME: Change results type
-export type RawResults = {
-    page: number;
-    results: any[];
-    total_pages: number;
-    total_results: number;
-};
-
-export enum MediaTypes {
-    MOVIE = "movie",
-    TV = "tv",
-    ALL = "all",
-    PERSON = "person",
-}
-
 export type Member = {
     adult: boolean;
     cast_id: number;
@@ -99,5 +84,3 @@ export type Member = {
     popularity: number
     profile_path: string;
 }
-
-export type RawResponse = Feature[] & Member[]

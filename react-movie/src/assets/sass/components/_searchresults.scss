@@ -1,0 +1,42 @@
+#search-results {
+  min-height: 100%;
+  margin: 25px auto 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  #search-result__card {
+    background: #0a0a0a;
+    width: 23.5%;
+    min-height: 185px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+          transition: background-image 2s;
+    overflow: hidden;
+    cursor: pointer;
+
+    #search-result__card__img {
+      padding-top: 155%;
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    #search-result__card__title {
+      padding: 15px;
+      min-height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      border: 1px solid rgb(179, 179, 179);
+      #search-result__card__img {
+        background-size: 110%;
+      }
+    }
+  }
+}

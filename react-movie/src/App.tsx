@@ -9,7 +9,7 @@ import { Content as Page, Header } from "./layouts";
 const App: React.FC = () => {
   return (
     <Router basename="/app">
-      <div className="movieApp">
+      <div className="app">
         <Header />
         <NavBar />
         <Page />
