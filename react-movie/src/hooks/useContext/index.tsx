@@ -3,7 +3,7 @@ import { Feature } from "../../utils/types";
 
 
 
-export const HeroContext = createContext<Feature>(null);
+export const HeroContext = createContext<Feature | undefined>(undefined);
 
 export { }
 

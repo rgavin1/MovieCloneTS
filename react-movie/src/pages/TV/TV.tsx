@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Hero, Slider } from "../../components";
-import { TvListResult } from "../../utils/types";
-import { popular } from "./mocks/popular";
+import useFeatureTvWeekly from "../../hooks/Services/Fetch/Feature/useFeatureTvWeekly";
+import { utils } from "../../utils";
+import { Feature } from "../../utils/types";
 
 const Tv: React.FC = () => {
-  const [results, setResults] = useState<TvListResult[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { loading, data } = useFeatureTvWeekly();
+
+  const [results, setResults] = useState<Feature>();
 
   useEffect(() => {
-    setResults(popular.results as TvListResult[]);
-  }, [results])
+    const feature = utils.selectRandomFeature(data);
+    setResults(feature);
+  }, [data]);
 
   return (
     <div id="tv">
-      <Hero results={results[0]} isLoading={isLoading} setIsLoading={setIsLoading} />
+      <Hero results={results} isLoading={loading} />
       <div className="section">
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
       </div>
     </div>
   );

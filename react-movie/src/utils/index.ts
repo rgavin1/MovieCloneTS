@@ -1,10 +1,11 @@
-// import { Feature, Slider, APIKEY } from "../../services/API";
+import { Feature } from "./types";
 
-// export const randomNumber = (max: number, min: number): number =>
-//   Math.floor(Math.random() * (max - min + 1)) + min;
 
-// export const selectedFeature = (list: Feature[]) =>
-//   list[randomNumber(0, list.length)];
+const randomNumber = (max: number, min: number): number =>
+    Math.floor(Math.random() * (max - min + 1)) + min;
+
+const selectRandomFeature = (list: Feature[]): Feature =>
+    (list[randomNumber(0, list.length)]);
 
 // export const HomeSlidersList: Slider[] = [
 //   {
@@ -29,12 +30,15 @@
 //   },
 // ];
 
-export const randomNumber = (length: number) => Math.floor(Math.random() * length)
+// export const randomNumber = (length: number) => Math.floor(Math.random() * length)
 
-export const getYearFromDate = (date: string | undefined) => {
+const getYearFromDate = (date: string | undefined) => {
     if (!date) return;
     return date.split("-")[0];
 }
 
 
-export const index = {}
+export const utils = {
+    selectRandomFeature,
+    getYearFromDate
+}

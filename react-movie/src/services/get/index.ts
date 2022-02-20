@@ -1,5 +1,5 @@
 export { discover } from "./discover"
 export { genres } from "./genres"
 export { getMovie } from "./Movies"
+export { getFeature } from "./Feature"
 export { television } from "./television"
-export { trending } from "./trending"

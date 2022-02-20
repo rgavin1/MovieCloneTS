@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import { getMovie } from "../../../services/get/Movies";
-import { MovieListResult } from "../../../utils/types";
+import { useState, useEffect } from 'react';
+import { getFeature } from '../../../../services/get/Feature';
+import { MovieListResult } from '../../../../utils/types';
 
-const useMovieTrends = () => {
+
+const useFeatureMovieWeekly = () => {
     const [data, setData] = useState<MovieListResult[]>([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ const useMovieTrends = () => {
         (async () => {
             try {
                 setLoading(true);
-                const results = await getMovie.trending();
+                const results = await getFeature.weeklyMovieFeatures();
                 setData(results)
             } catch (e: any) {
                 setError(e);
@@ -20,6 +21,6 @@ const useMovieTrends = () => {
         })();
     }, [])
     return { loading, data, error } as const;
-}
+};
 
-export default useMovieTrends;
+export default useFeatureMovieWeekly;

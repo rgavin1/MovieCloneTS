@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Hero, Slider } from "../../components";
-import { itemData } from "../../components/Slider/mock/itemData";
-import { RawResult } from "../../utils/types";
-
+import useFeatureAllWeekly from "../../hooks/Services/Fetch/Feature/useFeatureAllWeekly";
+import { utils } from "../../utils";
+import { Feature } from "../../utils/types";
 
 const Home: React.FC = () => {
-  const [results, setResults] = useState<RawResult>();
-  const [isLoading, setIsLoading] = useState(true);
+  const { loading, data } = useFeatureAllWeekly();
+
+  const [results, setResults] = useState<Feature>();
 
   useEffect(() => {
-    setResults(itemData as any)
-  }, [results])
+    const feature = utils.selectRandomFeature(data);
+    setResults(feature);
+  }, [data]);
 
   return (
     <div id="home">
-      {/* <Hero results={results} isLoading={isLoading} setIsLoading={setIsLoading} /> */}
+      <Hero results={results} isLoading={loading} />
       <div className="section">
-        <Slider name="TITLE" isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
-        <Slider isLoading={isLoading} />
+        <Slider name="TITLE" isLoading={loading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
+        <Slider isLoading={loading} />
       </div>
     </div>
   );

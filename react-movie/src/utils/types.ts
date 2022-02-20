@@ -6,7 +6,6 @@ export enum Media {
 }
 
 export type MediaType = Required<Media.TV> | Required<Media.MOVIE>;
-export type Feature = TvListResult | null;
 export type RawResponse = Feature[] & Member[]
 export type Genre = { [key: number]: string }
 export type PageRoute = {
@@ -51,6 +50,7 @@ export type PeopleListResult = {
     profile_path: string | null;
     media_type: Required<Media.PERSON>;
 }
+export type Feature = TvListResult | MovieListResult;
 export type SearchResults = TvListResult | MovieListResult | PeopleListResult;
 export type RawSearchResponse = {
     page: number;

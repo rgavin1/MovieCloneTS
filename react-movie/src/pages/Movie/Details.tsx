@@ -28,7 +28,7 @@ const Details: React.FC = () => {
 
     return (
         <div>
-            <Hero results={result} isLoading={isLoading} setIsLoading={setIsLoading} />
+            <Hero results={result} isLoading={isLoading} />
         </div>
     )
 }
