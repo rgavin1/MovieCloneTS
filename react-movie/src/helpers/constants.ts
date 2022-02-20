@@ -1,5 +1,8 @@
-import { Genre } from "../../utils/types";
+import { Genre } from "../utils/types";
 
+require('dotenv').config();
+export const APIKEY = process.env.REACT_APP_TMDB_APIKEY
+export const TMDB_URL = "https://api.themoviedb.org/3/";
 export const GENRES_LIST: Genre = {
     28: "Action",
     12: "Adventure",

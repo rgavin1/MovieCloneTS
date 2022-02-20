@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Hero } from "../../components";
-import { movie } from "../../services/request";
+import { getMovie } from "../../services/get";
 
 
 const Details: React.FC = () => {
@@ -14,7 +14,7 @@ const Details: React.FC = () => {
         setTimeout(async () => {
             setIsLoading(true);
             try {
-                const response = await movie.getDetailsById(id);
+                const response = await getMovie.detailsById(id);
                 setResult(response)
                 console.log(" details useState >> ", response)
             } catch (error) {

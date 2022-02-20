@@ -9,6 +9,7 @@ const Movie: React.FC = () => {
 
   useEffect(() => setResults(popular.results as MovieListResult[]), [results])
 
+
   return (
     <div id="movie">
       {/* <Hero results={results} isLoading={isLoading} setIsLoading={setIsLoading} /> */}

@@ -2,14 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Searchbar, SearchResults, SearchHeader } from '../../components';
 import { SearchResults as Results } from "../../utils/types";
 import { search } from "./mocks/search";
+// import { fetching } from '../../hooks/Services';
+;
 
 
 
 const Search: React.FC = () => {
-  const [results, setResults] = useState<Results[]>([]);
+  // const { data } = fetching.useMovieTrends();
+
   const [query, setQuery] = useState("");
+  const [results, setResults] = useState<Results[]>([]);
 
   useEffect(() => setResults(search.results as Results[]), []);
+
 
   return <div id="search">
     <Searchbar setQuery={setQuery} />
