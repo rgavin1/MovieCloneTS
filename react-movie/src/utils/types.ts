@@ -4,10 +4,17 @@ export enum Media {
     ALL = "all",
     PERSON = "person",
 }
-
+export type Cast = {
+    original_name: string;
+    // profile_path: string;
+}
 export type MediaType = Required<Media.TV> | Required<Media.MOVIE>;
-export type RawResponse = Feature[] & Member[]
+export type RawResponse = Feature[] & Member[];
 export type Genre = { [key: number]: string }
+export type Hero = {
+    results?: Feature;
+    isLoading: boolean;
+}
 export type PageRoute = {
     pathname: string;
     component: React.FC<{}>;

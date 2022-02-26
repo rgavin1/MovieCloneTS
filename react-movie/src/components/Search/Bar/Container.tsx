@@ -1,17 +1,31 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, useState, useEffect } from "react";
+import debounce from 'lodash/debounce';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useSearch } from "../../../hooks/Services/Fetch/Search";
+import { SearchResults } from "../../../utils/types";
 
-const Container: React.FC<{ setQuery: SetStateAction<Dispatch<string>> }> = ({ setQuery }) => {
-    const [focus, setFocus] = useState(false);
+const Container: React.FC<{
+    setQuery: Dispatch<string>;
+    setResults: Dispatch<SearchResults[]>;
+}> = ({ setQuery, setResults }) => {
     const [input, setInput] = useState("");
+    const [focus, setFocus] = useState(false);
 
+    const { data } = useSearch(input);
+
+    const handleChange = (term: string) => {
+        setInput(term);
+        setQuery(term);
+    }
+    const debounced = debounce(handleChange, 250);
     const handleOnFocus = () => setFocus((prev) => !prev);
-    const handleInput = (e: any) => { setInput(e.target.value); setQuery(e.target.value); };
+    const handleInput = (e: any) => debounced(e.target.value)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => { setResults(data) }, [input]);
 
     const isActive = focus ? "--active" : "";
-
-    // TODO: Handle Search 
 
     return (
         <div id="searchbar">

@@ -51,4 +51,10 @@
       letter-spacing: 0;
     }
   }
+
+  #feature-genre_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 }

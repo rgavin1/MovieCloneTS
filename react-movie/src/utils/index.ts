@@ -32,7 +32,7 @@ const selectRandomFeature = (list: Feature[]): Feature =>
 
 // export const randomNumber = (length: number) => Math.floor(Math.random() * length)
 
-const getYearFromDate = (date: string | undefined) => {
+export const getYearFromDate = (date: string | undefined) => {
     if (!date) return;
     return date.split("-")[0];
 }

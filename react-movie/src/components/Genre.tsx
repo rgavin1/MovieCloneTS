@@ -1,14 +1,10 @@
 import React from "react";
-// import { genres } from "../../services/API";
+import { GENRES_LIST } from "../helpers/constants";
 
-const Genre: React.FC<{ ids: any[] }> = ({ ids }) => {
+const Genre: React.FC<{ genresCode?: number[] }> = ({ genresCode }) => {
   return (
-    <ul>
-      {ids.map((termid, index) => {
-        return <h1>Ok</h1>
-        // const term = genres.find((genre) => genre.id === termid);
-        // return <li key={index}>{term?.name}</li>;
-      })}
+    <ul id="feature-genre_list">
+      {genresCode?.map((id, key) => <li key={key}>{GENRES_LIST[id]}</li>)}
     </ul>
   );
 };

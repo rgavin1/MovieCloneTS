@@ -4,6 +4,7 @@ import useFeatureAllWeekly from "../../hooks/Services/Fetch/Feature/useFeatureAl
 import { utils } from "../../utils";
 import { Feature } from "../../utils/types";
 
+
 const Home: React.FC = () => {
   const { loading, data } = useFeatureAllWeekly();
 
